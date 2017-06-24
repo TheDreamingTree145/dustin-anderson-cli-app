@@ -42,6 +42,9 @@ module DustinAndersonCLIApp
           puts options
         elsif input.downcase == 'options'
           puts options
+        elsif input.downcase == 'movie concensus'
+          DustinAndersonCLIApp::Movie.movie_concensus
+        else puts options
         end
       end
     end
