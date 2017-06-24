@@ -12,4 +12,5 @@ class MovieScraper
     self.get_top_page.css(".table tr").drop(1).each do |row|
       movie = DustinAndersonCLIApp::Movie.new
       movie.rank = row.css(".bold").text.delete!(".")
+      movie.rating = row.css(".tMeterScore").text.gsub!(/\u00A0/, "")
 end
