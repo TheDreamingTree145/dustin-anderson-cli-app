@@ -13,6 +13,7 @@ Gem::Specification.new do |spec|
   spec.homepage      = 'https://github.com/TheDreamingTree145/dustin-anderson-cli-app'
   spec.license       = 'MIT'
 
+
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
   # to allow pushing to a single host or delete this section to allow pushing to any host.
   if spec.respond_to?(:metadata)
@@ -31,4 +32,6 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.14"
   spec.add_development_dependency "rake", "~> 10.0"
+  spec.add_development_dependency 'pry', '~> 0.10.3'
+  spec.add_development_dependency 'nokogiri', '~> 1.6', '>= 1.6.8'
 end
