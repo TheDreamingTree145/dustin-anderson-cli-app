@@ -25,20 +25,20 @@ module DustinAndersonCLIApp
           puts summary_reminder
           puts options
         elsif input.downcase == 'top 25'
-          25.times do #change
-            puts "\ntop 25" # change
+          DustinAndersonCLIApp::Movie.all[0..24].each do |film|
+            puts "#{film.rank}. #{film.title} #{film.rating} #{film.reviews}"
           end
           puts summary_reminder
           puts options
         elsif input.downcase == 'top 50'
-          50.times do #change
-            puts "\ntop 50" #change
+          DustinAndersonCLIApp::Movie.all[0..49].each do |film|
+            puts "#{film.rank}. #{film.title} #{film.rating} #{film.reviews}"
           end
           puts summary_reminder
           puts options
         elsif input.downcase == 'list'
-          100.times do #change
-            puts "\ntop 100" #change
+          DustinAndersonCLIApp::Movie.all[0..99].each do |film|
+            puts "#{film.rank}. #{film.title} #{film.rating} #{film.reviews}"
           end
           puts summary_reminder
           puts options

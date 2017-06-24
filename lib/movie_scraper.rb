@@ -24,7 +24,12 @@ class MovieScraper
       details_doc = BASE_RT_URL + link
       open_details_doc = Nokogiri::HTML(open(details_doc))
       movie.summary = open_details_doc.css(".movie_synopsis").text.strip!
+      movie.parental = open_details_doc.css("div.meta-value").text
     end
     DustinAndersonCLIApp::Movie.all
+    binding.pry
   end
 end
+
+scrape = MovieScraper.new
+scrape.new_with_attributes

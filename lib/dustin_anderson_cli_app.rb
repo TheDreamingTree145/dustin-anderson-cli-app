@@ -2,15 +2,16 @@ require "./lib/app/version"
 
 module DustinAndersonCLIApp
   class Movie
-    attr_accessor :rank, :title, :rating, :reviews, :summary, :movie_scraper
+    attr_accessor :rank, :title, :rating, :reviews, :summary, :parental :movie_scraper
     @@all = []
 
-    def initialize(rank = nil, title = nil, rating = nil, reviews = nil, summary = nil)
+    def initialize(rank = nil, title = nil, rating = nil, reviews = nil, summary = nil, parental = nil)
       @rank = rank
       @title = title
       @rating = rating
       @reviews = reviews
       @summary = summary
+      @parental = parental
       @@all << self
     end
 
@@ -19,7 +20,7 @@ module DustinAndersonCLIApp
     end
 
     def self.movie_summary
-      options = "Here are your options for lists: \n" "To see the top 10, enter: 'top 10'\n" "To see the top 25, enter: 'top 25'\n" "To see the top 50, enter: 'top 50'\n" "To see the full list, enter: 'list'\n\n"
+      options = "Here are your options for lists: \n" "To see the top 10 enter: 'top 10'\n" "To see the top 25 enter: 'top 25'\n" "To see the top 50 enter: 'top 50'\n" "To see the full list enter: 'list\n'" "To leave the program enter 'exit'\n\n"
       another_summary = 'yes'
       while another_summary == 'yes'
         puts "Please enter the rank of the move you would like the summary of: "
