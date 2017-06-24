@@ -23,7 +23,7 @@ module DustinAndersonCLIApp
     end
 
     def self.movie_summary
-      options = "Here are your options for lists: \n" "To see the top 10 enter: 'top 10'\n" "To see the top 25 enter: 'top 25'\n" "To see the top 50 enter: 'top 50'\n" "To see the full list enter: 'list'\n" "To leave the program enter 'exit'\n\n"
+      options = "Here are your options for lists: \n" "To see the top 10 enter: 'top 10'\n" "To see the top 25 enter: 'top 25'\n" "To see the top 50 enter: 'top 50'\n" "To see the full list enter: 'list'\n" "To see a random movie summary from the list enter 'random'\n" "To leave the program enter 'exit'\n\n"
       another_summary = 'yes'
       while another_summary != 'options'
         if another_summary == 'exit'
@@ -40,12 +40,15 @@ module DustinAndersonCLIApp
               puts "#{film.title}:"
               puts film.summary
               puts "\nIf you would like a few more details about the movie enter 'more'.If you wnat another movie summary enter 'yes'. Else type 'options' for list of options."
-              another_summary = gets.chomp
-              if another_summary.downcase == 'more'
+              another_summary = gets.downcase.chomp
+              if another_summary == 'more'
                 puts "#{film.title}: "
                 puts " Parental Rating: #{film.parental}\n Film Genre: #{film.genre}\n In Theatres: #{film.theatre_date}\n Studio: #{film.studio}\n"
                 puts "\n.If you want another movie summary enter 'yes'. Else type 'options' for list of options."
                 another_summary = gets.downcase.chomp
+                if another_summary == 'options'
+                  break
+                end
               end
             end
           end
@@ -55,6 +58,11 @@ module DustinAndersonCLIApp
     end
 
     def self.random_movie_summary
+      random_movie_summary = self.all.sample
+      puts "#{random_movie_summary.title} #{random_movie_summary.rank}: "
+      puts "#{random_movie_summary.summary}\n"
+    end
+
 
 
   end
