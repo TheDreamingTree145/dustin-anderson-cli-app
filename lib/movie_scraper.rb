@@ -23,9 +23,9 @@ class MovieScraper
       link = row.css("a").attribute("href").value.sub("/", "")
       details_doc = BASE_RT_URL + link
       open_details_doc = Nokogiri::HTML(open(details_doc))
+      movie.summary = open_details_doc.css(".movie_synopsis").text.strip!
     end
     DustinAndersonCLIApp::Movie.all
-        binding.pry
   end
 end
 

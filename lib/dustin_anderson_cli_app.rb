@@ -2,15 +2,15 @@ require "./lib/app/version"
 
 module DustinAndersonCLIApp
   class Movie
-    attr_accessor :rank, :title, :rating, :reviews, :consensus
+    attr_accessor :rank, :title, :rating, :reviews, :summary
     @@all = []
 
-    def initialize(rank = nil, title = nil, rating = nil, reviews = nil, consensus = nil)
+    def initialize(rank = nil, title = nil, rating = nil, reviews = nil, summary = nil)
       @rank = rank
       @title = title
       @rating = rating
       @reviews = reviews
-      @consensus = consensus
+      @summary = summary
       @@all << self
     end
 
@@ -18,13 +18,13 @@ module DustinAndersonCLIApp
       @@all
     end
 
-    def movie_consensus
-      puts "Please enter the rank of the move you would like the critics consensus of: "
-      consensus_input = gets.chomp
-      if consensus_input.to_i >= 1 && consensus_input.to_i <= 100
+    def movie_summary
+      puts "Please enter the rank of the move you would like the critics summary of: "
+      summary_input = gets.chomp
+      if summary_input.to_i >= 1 && summary_input.to_i <= 100
         self.all.each do |film|
-          if film.rank == consensus
-            puts film.consensus # undefined currently
+          if film.rank == summary
+            puts film.summary # undefined currently
           end
         end
       end
