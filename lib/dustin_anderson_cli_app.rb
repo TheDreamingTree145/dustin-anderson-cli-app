@@ -18,5 +18,17 @@ module DustinAndersonCLIApp
       @@all
     end
 
+    def movie_consensus
+      puts "Please enter the rank of the move you would like the critics consensus of: "
+      consensus_input = gets.chomp
+      if consensus_input.to_i >= 1 && consensus_input.to_i <= 100
+        self.all.each do |film|
+          if film.rank == consensus
+            puts film.consensus # undefined currently
+          end
+        end
+      end
+    end
+
   end
 end
