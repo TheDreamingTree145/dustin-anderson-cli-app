@@ -28,7 +28,3 @@ class MovieScraper
     DustinAndersonCLIApp::Movie.all
   end
 end
-
-zero = MovieScraper.new
-binding.pry
-zero
