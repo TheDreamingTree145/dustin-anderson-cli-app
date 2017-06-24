@@ -18,4 +18,5 @@ module DustinAndersonCLIApp
       @@all
     end
 
+  end
 end
