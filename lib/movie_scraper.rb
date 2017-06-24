@@ -5,11 +5,11 @@ require 'open-uri'
 require_relative './dustin_anderson_cli_app'
 
 class MovieScraper
-
-  BASE_RT_URL = "https://www.rottentomatoes.com/"
+  attr_accessor :movie
+  BASE_RT_URL = 'https://www.rottentomatoes.com/'
 
   def get_main_page
-    doc = Nokogiri::HTML(open("https://www.rottentomatoes.com/top/bestofrt/"))
+    doc = Nokogiri::HTML(open('https://www.rottentomatoes.com/top/bestofrt/'))
   end
 
   def new_with_attributes

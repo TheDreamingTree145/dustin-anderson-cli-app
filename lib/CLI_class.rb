@@ -3,7 +3,7 @@ require_relative './dustin_anderson_cli_app'
 
 module DustinAndersonCLIApp
   class Controller
-
+    attr_accessor :movie_scraper, :movie
     def call
 
       options = "Here are your options for lists: \n" "To see the top 10, enter: 'top 10'\n" "To see the top 25, enter: 'top 25'\n" "To see the top 50, enter: 'top 50'\n" "To see the full list, enter: 'list'\n\n"
@@ -15,11 +15,12 @@ module DustinAndersonCLIApp
       puts options
       input = ""
       scrape = MovieScraper.new
+      scrape.new_with_attributes
       while input.downcase != 'exit'
         input = gets.chomp
         if input.downcase == 'top 10'
-          10.times do #temporary
-            puts "\ntop 10"
+          DustinAndersonCLIApp::Movie.all[0..9].each do |film|
+            puts "#{film.rank}. #{film.title} #{film.rating} #{film.reviews}"
           end
           puts summary_reminder
           puts options

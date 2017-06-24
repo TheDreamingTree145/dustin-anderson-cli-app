@@ -24,6 +24,7 @@ module DustinAndersonCLIApp
       if summary_input.to_i >= 1 && summary_input.to_i <= 100
         self.all.each do |film|
           if film.rank == summary_input
+            puts film.title
             puts film.summary
           end
         end
