@@ -14,6 +14,7 @@ module DustinAndersonCLIApp
 
       puts options
       input = ""
+      scrape = MovieScraper.new
       while input.downcase != 'exit'
         input = gets.chomp
         if input.downcase == 'top 10'
