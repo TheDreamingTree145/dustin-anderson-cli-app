@@ -4,9 +4,10 @@ require_relative './dustin_anderson_cli_app'
 module DustinAndersonCLIApp
   class Controller
     attr_accessor :movie_scraper, :movie
+
     def call
 
-      options = "Here are your options for lists: \n" "To see the top 10, enter: 'top 10'\n" "To see the top 25, enter: 'top 25'\n" "To see the top 50, enter: 'top 50'\n" "To see the full list, enter: 'list'\n\n"
+      options = "Here are your options for lists: \n" "To see the top 10 enter: 'top 10'\n" "To see the top 25 enter: 'top 25'\n" "To see the top 50 enter: 'top 50'\n" "To see the full list enter: 'list\n'" "To leave the program enter 'exit'\n\n"
 
       summary_reminder = "\nIf you would like to see a movie summary, enter 'movie summary' and then the rank of the movie you would like the summary of.\n\n"
 
