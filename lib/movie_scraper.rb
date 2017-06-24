@@ -13,4 +13,7 @@ class MovieScraper
       movie = DustinAndersonCLIApp::Movie.new
       movie.rank = row.css(".bold").text.delete!(".")
       movie.rating = row.css(".tMeterScore").text.gsub!(/\u00A0/, "")
+      movie.title = row.css(".unstyled").text
+      movie.title.strip!
+      movie.reviews = row.css("td.right-hidden-xs").text
 end
