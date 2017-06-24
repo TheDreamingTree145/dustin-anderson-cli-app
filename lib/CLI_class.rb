@@ -42,6 +42,8 @@ module DustinAndersonCLIApp
           puts options
         elsif input.downcase == 'options'
           puts options
+        end
+      end
     end
 
 
