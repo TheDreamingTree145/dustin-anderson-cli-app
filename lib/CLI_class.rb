@@ -19,7 +19,7 @@ module DustinAndersonCLIApp
       scrape = MovieScraper.new
       scrape.new_with_attributes
       while input.downcase != 'exit'
-        input = gets.chomp
+        input = gets.strip!
         if input.downcase == 'top 10'
           DustinAndersonCLIApp::Movie.top_ten
           puts SUMMARY_REMINDER

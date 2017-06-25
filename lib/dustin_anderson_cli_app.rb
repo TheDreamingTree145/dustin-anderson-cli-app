@@ -48,13 +48,13 @@ module DustinAndersonCLIApp
     end
 
     def self.movie_summary
-      another_summary = 'yes'
+      another_summary = ""
       while another_summary != 'options'
         if another_summary == 'exit'
           break
         end
         puts "Please enter the rank of the move you would like the summary of: "
-        summary_input = gets.chomp
+        summary_input = gets.strip!
         if summary_input == 'exit'
           break
         end
@@ -63,16 +63,15 @@ module DustinAndersonCLIApp
             if film.rank == summary_input
               puts "#{film.title}:"
               puts film.summary
-              puts "\nIf you would like a few more details about the movie enter 'more'.If you wnat another movie summary enter 'yes'. Else type 'options' for list of options."
-              another_summary = gets.downcase.chomp
+              puts "\nIf you would like a few more details about the movie enter 'more'.If you want another movie summary enter 'yes' or press the enter key. Else type 'options' for list of options."
+              another_summary = gets.downcase.strip!
               if another_summary == 'more'
                 puts "#{film.title}: "
                 puts " Parental Rating: #{film.parental}\n Film Genre: #{film.genre}\n In Theatres: #{film.theatre_date}\n Studio: #{film.studio}\n"
-                puts "\n.If you want another movie summary enter 'yes'. Else type 'options' for list of options."
-                another_summary = gets.downcase.chomp
-                if another_summary == 'options'
-                  break
-                end
+                puts "\nIf you want another movie summary enter 'yes' or press the enter key. Else type 'options' for list of options."
+                another_summary = gets.downcase.strip!
+              elsif another_summary == 'options' || another_summary == ""
+                break
               end
             end
           end
