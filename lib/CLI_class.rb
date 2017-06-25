@@ -20,15 +20,11 @@ module DustinAndersonCLIApp
       while input.downcase != 'exit'
         input = gets.chomp
         if input.downcase == 'top 10'
-          DustinAndersonCLIApp::Movie.all[0..9].each do |film|
-            puts "#{film.rank}. #{film.title} #{film.rating} #{film.reviews}"
-          end
+          DustinAndersonCLIApp::Movie.top_ten
           puts summary_reminder
           puts options
         elsif input.downcase == 'top 25'
-          DustinAndersonCLIApp::Movie.all[0..24].each do |film|
-            puts "#{film.rank}. #{film.title} #{film.rating} #{film.reviews}"
-          end
+          DustinAndersonCLIApp::Movie.top_twentyfive
           puts summary_reminder
           puts options
         elsif input.downcase == 'top 50'

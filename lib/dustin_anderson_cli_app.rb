@@ -22,6 +22,18 @@ module DustinAndersonCLIApp
       @@all
     end
 
+    def self.top_ten
+      DustinAndersonCLIApp::Movie.all[0..9].each do |film|
+        puts "#{film.rank}. #{film.title} #{film.rating} #{film.reviews}"
+      end
+    end
+
+    def self.top_twentyfive
+      DustinAndersonCLIApp::Movie.all[0..24].each do |film|
+        puts "#{film.rank}. #{film.title} #{film.rating} #{film.reviews}"
+      end
+    end
+
     def self.movie_summary
       options = "Here are your options for lists: \n" "To see the top 10 enter: 'top 10'\n" "To see the top 25 enter: 'top 25'\n" "To see the top 50 enter: 'top 50'\n" "To see the full list enter: 'list'\n" "To see a random movie summary from the list enter 'random'\n" "To leave the program enter 'exit'\n\n"
       another_summary = 'yes'
