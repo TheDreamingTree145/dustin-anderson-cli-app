@@ -20,16 +20,19 @@ class MovieScraper
       movie.title = row.css(".unstyled").text
       movie.title.strip!
       movie.reviews = row.css(".right").text
-
-      link = row.css("a").attribute("href").value.sub("/", "")
-      details_doc = BASE_RT_URL + link
-      open_details_doc = Nokogiri::HTML(open(details_doc))
-      movie.summary = open_details_doc.css(".movie_synopsis").text.strip!
-      movie.parental = open_details_doc.css(".meta-value").first.text
-      movie.genre = open_details_doc.css(".meta-value a").first.text.strip!
-      movie.theatre_date = open_details_doc.css(".meta-value time").first.text
-      movie.studio = open_details_doc.css("div.meta-value").last.text.strip
+      movie.link = link = row.css("a").attribute("href").value.sub("/", "")
     end
     DustinAndersonCLIApp::Movie.all
+  end
+
+  def more_details(movie)
+    details_doc = BASE_RT_URL + movie.link
+    open_details_doc = Nokogiri::HTML(open(details_doc))
+    movie.summary = open_details_doc.css(".movie_synopsis").text.strip!
+    movie.parental = open_details_doc.css(".meta-value").first.text
+    movie.genre = open_details_doc.css(".meta-value a").first.text.strip!
+    movie.theatre_date = open_details_doc.css(".meta-value time").first.text
+    movie.studio = open_details_doc.css("div.meta-value").last.text.strip
+    movie
   end
 end
