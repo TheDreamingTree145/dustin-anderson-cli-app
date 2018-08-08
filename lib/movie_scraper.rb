@@ -19,9 +19,7 @@ class MovieScraper
       movie.title = row.css(".unstyled").text
       movie.title.strip!
       movie.reviews = row.css(".right").text
-<<<<<<< HEAD
-      movie.link = link = row.css("a").attribute("href").value.sub("/", "")
-=======
+
       link = row.css("a").attribute("href").value.sub("/", "")
       details_doc = BASE_RT_URL + link
       open_details_doc = Nokogiri::HTML(open(details_doc))
@@ -30,7 +28,6 @@ class MovieScraper
       movie.genre = open_details_doc.css(".meta-value a").first.text.strip!
       movie.theatre_date = open_details_doc.css(".meta-value time").first.text
       movie.studio = open_details_doc.css("div.meta-value").last.text.strip
->>>>>>> parent of fcc53fd... spacing changes
     end
     DustinAndersonCLIApp::Movie.all
   end
