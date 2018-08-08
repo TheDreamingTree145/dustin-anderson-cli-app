@@ -1,6 +1,8 @@
 # DustinAndersonCLIApp
 
-This is a CLI application that takese date from Rotten Tomatoes top 100 movie list and gives the user details on each movie.
+This is a CLI application that takse date from Rotten Tomatoes top 100 movie list and gives the user details on each movie.
+
+Update for commit
 
 ## Installation
 
