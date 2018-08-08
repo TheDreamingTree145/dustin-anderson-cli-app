@@ -2,8 +2,6 @@
 
 This is a CLI application that takse date from Rotten Tomatoes top 100 movie list and gives the user details on each movie.
 
-Update for commit - for real
-
 ## Installation
 
 Add this line to your application's Gemfile:
