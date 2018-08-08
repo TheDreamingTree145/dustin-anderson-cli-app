@@ -9,7 +9,7 @@ module DustinAndersonCLIApp
 
     SUMMARY_REMINDER = "\nIf you would like to see a movie summary, enter 'movie summary' and then the rank of the movie you would like the summary of.\n\n"
 
-    WELCOME = "Welcome to Rotten Tomatoes top 100 movies! This will list the rank, title, rating, and the number of reviews on Rotten Tomatoes. Once you choose how many movies to see at once, just input the rank of the movie to see the movie summary. At any time you can type 'exit' to quit the program, or options for a list of options. Each list will put the film rank, title, Rotten Tomato ranking, and the number of reviews.\n\n"
+    WELCOME = "Welcome to Rotten Tomatoes top 100 movies ever made! This will list the rank, title, rating, and the number of reviews on Rotten Tomatoes. Once you choose how many movies to see at once, just input the rank of the movie to see the movie summary. At any time you can type 'exit' to quit the program, or options for a list of options. Each list will put the film rank, title, Rotten Tomato ranking, and the number of reviews.\n\n"
 
     def call
 
